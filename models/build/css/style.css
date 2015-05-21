@@ -1,0 +1,10 @@
+// models/src/css/style.css
+body {
+  font-family: monospace;
+  box-sizing:border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: red;
+}
