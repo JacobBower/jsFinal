@@ -27,20 +27,16 @@ module.exports = function(grunt) {
         options: {
           livereload: true
         },
-        files: "models/src/css/**/*.css",
+        files: "src/css/**/*.css",
         tasks: ["autoprefixer"]
-      },
-      template: {
-        files: "**/*.html",
-        tasks: ["hello"]
       }
     },
     autoprefixer: {
       dev: {
         expand: true,
         flatten: true,
-        src: "models/src/css/**/*.css",
-        dest: "models/build/css/"
+        src: "src/css/**/*.css",
+        dest: "build/css/"
       }
     }
   });

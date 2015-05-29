@@ -1,3 +1,4 @@
+var fs = require("fs");
 var hapi = require("hapi");
 var server = new hapi.Server();
 
@@ -11,7 +12,9 @@ server.views({
   engines: {
     html: require("handlebars")
   },
-  path: "views",
+  path: "templates",
+  layoutPath: "layouts",
+  layout: "default",
   isCached: false
 });
 
@@ -19,16 +22,16 @@ server.route({
   method:"GET",
   path: "/",
   handler:function(req, reply) {
-    reply.view("templates/index.html");
+    reply.view("index.html");
   }
 });
 
-server.route({
-  method:"GET",
-  path: "models/assets/{param*}",
-  handler: {
-    directory: {
-        path: "build"
-    }
-  }
-});
+// server.route({
+//   method:"GET",
+//   path: "/list",
+//   handler: {
+//     directory: {
+//         path: "build"
+//     }
+//   }
+// });
