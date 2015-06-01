@@ -3,6 +3,8 @@ var fs = require("fs");
 var hapi = require("hapi");
 var sqlite = require("sqlite3");
 var async = require("async");
+var db = new sqlite.Database("list.db");
+
 var server = new hapi.Server();
 
 server.connection({
@@ -37,5 +39,14 @@ server.route({
     reply.view("list.html", {
       listItem: list.lists
     });
+  }
+});
+
+server.route({
+  method: "POST",
+  path: "/list",
+  handler: function(req, reply) {
+    db.run("CREATE TABLE IF NOT EXISTS lists (type, name, items)");
+
   }
 });
