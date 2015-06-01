@@ -1,14 +1,18 @@
 
+<h3>Add Items To Your List and Take Them Wherever You Go!</h3>
+
 <form action="/list" method="POST">
 	<label for="type">What Type of List: </label></br>
         <select name="type">
-          <option value="todo" selected="selected">To Do</option>
-          <option value="grocery">Grocery</option>
-          <option value="bucket">Bucket List</option>
-          <option value="general">General</option>
+          <option value="Todo" selected="selected">Todo</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Bucket">Bucket List</option>
+          <option value="General">General</option>
         </select></br>
         <label for="name">Name of List:</label></br>
         <input name="name" type="text"></br>
         <label for="items">Add Your List Items:</label></br>
 		<textarea name="items" cols="40" rows="5"></textarea>
+    <input type="submit" >
 </form>
+

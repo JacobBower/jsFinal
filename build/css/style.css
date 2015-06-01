@@ -1,4 +1,4 @@
-// models/src/css/style.css
+// src/css/style.css
 body {
   font-family: monospace;
   box-sizing:border-box;
@@ -7,4 +7,5 @@ body {
   display: -ms-flexbox;
   display: flex;
   color: red;
+  font-style: italic;
 }

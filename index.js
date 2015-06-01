@@ -1,5 +1,8 @@
+var list = require("./list")
 var fs = require("fs");
 var hapi = require("hapi");
+var sqlite = require("sqlite3");
+var async = require("async");
 var server = new hapi.Server();
 
 server.connection({
@@ -26,12 +29,13 @@ server.route({
   }
 });
 
-// server.route({
-//   method:"GET",
-//   path: "/list",
-//   handler: {
-//     directory: {
-//         path: "build"
-//     }
-//   }
-// });
+server.route({
+  method: "POST",
+  path: "/list",
+  handler: function(req, reply) {
+    list.add(req.payload);
+    reply.view("list.html", {
+      listItem: list.lists
+    });
+  }
+});
