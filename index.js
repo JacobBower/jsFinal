@@ -1,9 +1,7 @@
-var list = require("./list")
+//var list = require("./list")
 var fs = require("fs");
 var hapi = require("hapi");
-var sqlite = require("sqlite3");
 var async = require("async");
-var db = new sqlite.Database("list.db");
 
 var server = new hapi.Server();
 
@@ -11,42 +9,50 @@ server.connection({
   port:8000
 });
 
-server.start();
-
 server.views({
   engines: {
     html: require("handlebars")
   },
-  path: "templates",
+  path: "./views/templates",
   layoutPath: "layouts",
   layout: "default",
   isCached: false
 });
 
-server.route({
-  method:"GET",
-  path: "/",
-  handler:function(req, reply) {
-    reply.view("index.html");
-  }
+var List = require("./models/singleList");
+
+var sql = require("./database");
+sql.init(function() {
+	var list = new List({
+		type: "bucket",
+		name: "Cliff Jump"
+	});
+	console.log(list.toJSON());
+    server.start();
 });
 
-server.route({
-  method: "POST",
-  path: "/list",
-  handler: function(req, reply) {
-    list.add(req.payload);
-    reply.view("list.html", {
-      listItem: list.lists
-    });
-  }
-});
 
-server.route({
-  method: "POST",
-  path: "/list",
-  handler: function(req, reply) {
-    db.run("CREATE TABLE IF NOT EXISTS lists (type, name, items)");
 
-  }
-});
+var routes = require("./routes")
+
+server.route(routes);
+
+// server.route({
+//   method: "POST",
+//   path: "/list",
+//   handler: function(req, reply) {
+//     list.add(req.payload);
+//     reply.view("list.html", {
+//       listItem: list.lists
+//     });
+//   }
+// });
+
+// server.route({
+//   method: "POST",
+//   path: "/list",
+//   handler: function(req, reply) {
+//     db.run("CREATE TABLE IF NOT EXISTS lists (type, name, items)");
+//
+//   }
+// });
