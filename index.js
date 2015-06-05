@@ -23,17 +23,25 @@ var List = require("./models/singleList");
 
 var sql = require("./database");
 sql.init(function() {
-	var list = new List({
+	var lists = new List({
 		type: "bucket",
 		name: "Cliff Jump"
 	});
-	console.log(list.toJSON());
+	console.log(lists.toJSON());
+	lists.create(function(err) {
+		if (err) {
+			console.error(err);
+		}
+		sql.connection.all("SELECT * FROM lists", function (err, results) {
+			console.log(err, results);
+		});
+	});
     server.start();
 });
 
 
 
-var routes = require("./routes")
+var routes = require("./routes");
 
 server.route(routes);
 
