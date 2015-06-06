@@ -24,17 +24,12 @@ var List = require("./models/singleList");
 var sql = require("./database");
 sql.init(function() {
 	var lists = new List({
-		type: "bucket",
-		name: "Cliff Jump"
+		type: "grocery",
+		name: "Jambalaya",
+    items: "Crawdads, Andouille, Chicken, Peppers, Celery, Onion, Rice, Stock"
 	});
-	console.log(lists.toJSON());
+	//console.log(lists.toJSON());
 	lists.create(function(err) {
-		if (err) {
-			console.error(err);
-		}
-		sql.connection.all("SELECT * FROM lists", function (err, results) {
-			console.log(err, results);
-		});
 	});
     server.start();
 });

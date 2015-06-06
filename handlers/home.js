@@ -8,6 +8,8 @@ module.exports = function(req, reply) {
     list.load(function() {
       var data = list.toJSON();
       // console.log(data);
-      reply.view("index.html");
+      reply.view("index.html", {
+        lists: data
+      });
 	});
 };

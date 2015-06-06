@@ -8,7 +8,7 @@ var ListOfLists = Backbone.Collection.extend({
 	model: SingleList,
 	load: function(callback) {
 		var self = this;
-		var q = "SELECT * FROM lists;"
+		var q = "SELECT rowid AS id, name, type, items FROM lists;"
 		sql.connection.all(q, function(err, results) {
 			self.reset(results);
 			callback();

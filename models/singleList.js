@@ -5,7 +5,8 @@ var List = Backbone.Model.extend({
 	defaults: {
 		type: "todo",
 		name: "",
-		items: ""
+		items: "",
+		id: ""
 	},
 	create: function(callback) {
 		callback = callback || function() {};
@@ -15,7 +16,9 @@ var List = Backbone.Model.extend({
 			$type: data.type,
 			$name: data.name,
 			$items: data.items
-		}, callback)
+		}, function() {
+			callback();
+		});
 	}
 });
 
