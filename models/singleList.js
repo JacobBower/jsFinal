@@ -3,7 +3,7 @@ var sql = require("../database.js");
 
 var List = Backbone.Model.extend({
 	defaults: {
-		type: "todo",
+		type: "",
 		name: "",
 		items: "",
 		id: ""
@@ -15,14 +15,15 @@ var List = Backbone.Model.extend({
 		sql.connection.run(q, {
 			$type: data.type,
 			$name: data.name,
-			$items: data.items
+			$items: data.items,
+			//$id: data.id
 		}, function() {
 			callback();
-		});
+		}); 
 	}
 });
 
-var list = new List();
+//var list = new List();
 //console.log(list.toJSON());
 
 module.exports = List;

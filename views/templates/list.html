@@ -1,11 +1,23 @@
-<h3>Welcome To Your List</h3>
+<h2>Your List</h2>
 
-
-    {{#each listItem}}
-    </br >
-    <p>This is your {{type}} list named "{{name}}":</p>
+	{{#each lists}}
+	<p>These are the items on your {{type}} List named "{{name}}":</p>
     <ul>
     <li>{{items}}</li>
     </ul>
-    </br >
-    {{/each}}
+	{{/each}}
+	<hr>
+    
+   <a href="/"><button type="button" color="red">Create Another List</button></a>
+   <br>
+
+
+   <h3>Your Other Lists:</h3>
+<ul>
+	{{#each lists}}
+	<!-- <li><a href="/list/{{id}}">{{name}}</a> -->
+  <li><a href="list.html">{{name}}</a>
+	{{/each}}
+</ul>
+
+    

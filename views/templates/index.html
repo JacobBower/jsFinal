@@ -1,18 +1,18 @@
 
-<h3>Create a List and Take Them Wherever You Go!</h3>
+<h2>Create a List and Take Them Wherever You Go!</h2>
 
 <form action="/list/create" method="POST">
 
 				<label for="type">What Type of List:</label></br>
         <select name="type">
-          <option value="todo" selected="selected">Todo</option>
-          <option value="grocery">Grocery</option>
-          <option value="bucket">Bucket List</option>
-          <option value="general">General</option>
-        </select></br>
+          <option value="Todo" selected="selected">Todo</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Bucket">Bucket</option>
+          <option value="General">General</option>
+        </select></br></br>
 
         <label for="name">Name of List:</label></br>
-        <input name="name" type="text"></br>
+        <input name="name" type="text"></br><br>
 
         <label for="items">Add Your List Items:</label></br>
 				<textarea name="items" cols="40" rows="5"></textarea>
@@ -20,9 +20,10 @@
     		<input type="submit" value="ADD">
 </form></br>
 
-<h4>Your Lists:</h4>
+<h3>Your Lists:</h3>
 <ul>
 	{{#each lists}}
-	<li><a href="list/{{id}}">{{name}}</a>
+	<li><a href="/list/{{id}}">{{name}}</a>
+  <!-- <li><a href="list.html">{{name}}</a> -->
 	{{/each}}
 </ul>

@@ -3,12 +3,72 @@
 <html>
 <head>
 	<title>List On The Go</title>
-	<link rel="stylesheet" href="/assets/style.css">
+	<link rel="stylesheet" href="/src/style.css">
 	<meta charset="utf8">
+<style type="text/css">
+
+body {
+	font-family: monospace, arial, helvetica;
+	font-size: 1em;	
+}
+header {
+	max-width:675px;
+	/*height: 40px;*/
+	background-color: #088a85;
+	margin: 0 auto;
+	text-align: center;
+	padding: 10px 20px;
+	border-bottom: 5px dotted;
+
+}
+#content {
+	max-width: 675px;
+	margin:0 auto;
+	background-color: #cef6ec;
+	padding: 10px 20px;
+}
+h1 {
+	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+ul li {
+	color: #088A68;
+	font-size: 1.2em;
+	font-style: italic;
+}
+ul li a {
+	text-decoration: none;
+	color: #df3a01;
+	font-size: 1em;
+	font-style: normal;
+}
+ul li a:hover {
+	color: #088A68;
+}
+footer {
+	max-width:675px;
+	background-color: #088a85;
+	margin: 0 auto;
+	padding: 5px 20px;
+	border-top: 5px dotted;
+}
+
+
+</style>
 </head>
 	<body>
+		<header>
+				<h1>LIST ON THE GO</h1>
+		</header>
+
+		<div id="content">
 
 		{{{content}}}
+
+	</div>
+
+		<footer>
+			<h5>ITC:298 • Jacob Bower</h5>
+		</footer>
 
 	</body>
 

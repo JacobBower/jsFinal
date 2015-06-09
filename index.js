@@ -23,14 +23,14 @@ var List = require("./models/singleList");
 
 var sql = require("./database");
 sql.init(function() {
-	var lists = new List({
-		type: "grocery",
-		name: "Jambalaya",
-    items: "Crawdads, Andouille, Chicken, Peppers, Celery, Onion, Rice, Stock"
-	});
+	// var lists = new List({
+	// 	type: "grocery",
+	// 	name: "Jambalaya",
+ //    items: "Crawdads, Andouille, Chicken, Peppers, Celery, Onion, Rice, Stock"
+	// });
 	//console.log(lists.toJSON());
-	lists.create(function(err) {
-	});
+	// lists.create(function(err) {
+	// });
     server.start();
 });
 
@@ -51,11 +51,3 @@ server.route(routes);
 //   }
 // });
 
-// server.route({
-//   method: "POST",
-//   path: "/list",
-//   handler: function(req, reply) {
-//     db.run("CREATE TABLE IF NOT EXISTS lists (type, name, items)");
-//
-//   }
-// });
