@@ -1,11 +1,9 @@
 <h2>Your List</h2>
 
-	{{#each lists}}
 	<p>These are the items on your {{type}} List named "{{name}}":</p>
     <ul>
     <li>{{items}}</li>
     </ul>
-	{{/each}}
 	<hr>
     
    <a href="/"><button type="button" color="red">Create Another List</button></a>
@@ -15,8 +13,8 @@
    <h3>Your Other Lists:</h3>
 <ul>
 	{{#each lists}}
-	<!-- <li><a href="/list/{{id}}">{{name}}</a> -->
-  <li><a href="list.html">{{name}}</a>
+	<li><a href="/list/{{id}}">{{name}}</a>
+  <!-- <li><a href="list.html">{{name}}</a> -->
 	{{/each}}
 </ul>
 

@@ -11,8 +11,8 @@ module.exports = [
   },
   {
     method: "GET",
-    path: "/list.html",
-    //path: "/list/{id}",
+    //path: "/list.html",
+    path: "/list/{id}",
     handler: require("./handlers/goToList")
   },
   {
@@ -20,7 +20,7 @@ module.exports = [
     path: "/assests/{param*}",
     handler: {
       directory: {
-        path: "public"
+        path: "src"
       }
     }
   }

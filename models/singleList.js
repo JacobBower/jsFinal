@@ -20,6 +20,22 @@ var List = Backbone.Model.extend({
 		}, function() {
 			callback();
 		}); 
+	},
+	load: function(callback) {
+		var self = this;
+		//select from database
+		//var q = "SELECT rowid AS id, name, type, items FROM lists WHERE rowid = $id;";
+		var q = "SELECT * FROM lists WHERE rowid = $id;";
+		//SELECT name, client, address FROM projects WHERE rowid = $id;"
+		//get a single result
+		sql.connection.get(q, {
+			$id: this.get("id")
+		}, function(err, results) {
+			console.log(results);
+			self.set(results);
+			callback();
+		});
+		//self.set(result);
 	}
 });
 
