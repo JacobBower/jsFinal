@@ -1,5 +1,5 @@
 //var list = require("./list")
-var fs = require("fs");
+//var fs = require("fs");
 var hapi = require("hapi");
 var async = require("async");
 
@@ -21,6 +21,7 @@ server.views({
 
 var sql = require("./database");
 sql.init(function() {
+	//initializes database before starting the server
     server.start();
 });
 

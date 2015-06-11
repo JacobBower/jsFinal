@@ -11,7 +11,6 @@ var facade = {
         callback();
     });
   }
-
 };
 
 module.exports = facade;

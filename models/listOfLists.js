@@ -13,9 +13,7 @@ var ListOfLists = Backbone.Collection.extend({
 			self.reset(results);
 			callback();
 		});
-
 	}
-
 });
 
 module.exports = ListOfLists;

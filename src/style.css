@@ -4,13 +4,12 @@ body {
 }
 header {
 	max-width:675px;
-	/*height: 40px;*/
+	height: 40px;
 	background-color: #088a85;
 	margin: 0 auto;
 	text-align: center;
 	padding: 10px 20px;
 	border-bottom: 5px dotted;
-
 }
 #content {
 	max-width: 675px;
@@ -20,6 +19,7 @@ header {
 }
 h1 {
 	text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+	margin: 0 auto;
 }
 ul li {
 	color: #088A68;
@@ -34,6 +34,14 @@ ul li a {
 }
 ul li a:hover {
 	color: #088A68;
+}
+button {
+	background-color: #fff;
+	opacity: .8;
+	border-radius: 5px;
+}
+.right {
+	float: right;
 }
 footer {
 	max-width:675px;

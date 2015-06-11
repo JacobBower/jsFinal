@@ -1,3 +1,5 @@
+//createList.js
+
 var SingleList = require("../models/singleList");
 
 module.exports = function(req, reply) {
@@ -6,5 +8,4 @@ module.exports = function(req, reply) {
   list.create(function () {
     reply.redirect("/");
   });
-
 }

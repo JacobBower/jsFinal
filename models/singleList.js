@@ -16,30 +16,23 @@ var List = Backbone.Model.extend({
 			$type: data.type,
 			$name: data.name,
 			$items: data.items,
-			//$id: data.id
 		}, function() {
 			callback();
 		}); 
 	},
 	load: function(callback) {
 		var self = this;
-		//select from database
-		//var q = "SELECT rowid AS id, name, type, items FROM lists WHERE rowid = $id;";
 		var q = "SELECT * FROM lists WHERE rowid = $id;";
-		//SELECT name, client, address FROM projects WHERE rowid = $id;"
 		//get a single result
+		//self.set(result);
 		sql.connection.get(q, {
 			$id: this.get("id")
 		}, function(err, results) {
-			console.log(results);
+			//console.log(results);
 			self.set(results);
 			callback();
 		});
-		//self.set(result);
 	}
 });
-
-//var list = new List();
-//console.log(list.toJSON());
 
 module.exports = List;
