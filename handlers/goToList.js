@@ -1,5 +1,5 @@
 var SingleList = require("../models/singleList");
-var ListofLists = require("../models/singleList");
+var ListOfLists = require("../models/listOfLists");
 
 module.exports = function(req, reply) {
     var id = req.params.id;
@@ -8,7 +8,7 @@ module.exports = function(req, reply) {
     });
     list.load(function() {
       var data = list.toJSON();
-      console.log(data);
+      //console.log(data);
       reply.view("list", {
         lists: data,
         name: data.name,
@@ -16,5 +16,6 @@ module.exports = function(req, reply) {
         items: data.items,
         //id: data.id
       });
+      
 	});
 };

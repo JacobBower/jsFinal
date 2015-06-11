@@ -11,9 +11,13 @@ module.exports = [
   },
   {
     method: "GET",
-    //path: "/list.html",
     path: "/list/{id}",
     handler: require("./handlers/goToList")
+  },
+  {
+    method: "GET",
+    path: "/allLists",
+    handler: require("./handlers/listPageList")
   },
   {
     method: "GET",
@@ -25,3 +29,5 @@ module.exports = [
     }
   }
 ];
+
+//list/{id}

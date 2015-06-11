@@ -19,35 +19,13 @@ server.views({
   isCached: false
 });
 
-var List = require("./models/singleList");
-
 var sql = require("./database");
 sql.init(function() {
-	// var lists = new List({
-	// 	type: "grocery",
-	// 	name: "Jambalaya",
- //    items: "Crawdads, Andouille, Chicken, Peppers, Celery, Onion, Rice, Stock"
-	// });
-	//console.log(lists.toJSON());
-	// lists.create(function(err) {
-	// });
     server.start();
 });
-
-
 
 var routes = require("./routes");
 
 server.route(routes);
 
-// server.route({
-//   method: "POST",
-//   path: "/list",
-//   handler: function(req, reply) {
-//     list.add(req.payload);
-//     reply.view("list.html", {
-//       listItem: list.lists
-//     });
-//   }
-// });
 
