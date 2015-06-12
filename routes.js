@@ -21,7 +21,7 @@ module.exports = [
   },
   {
     method: "GET",
-    path: "/assests/{param*}",
+    path: "/assets/{param*}",
     handler: {
       directory: {
         path: "src"
