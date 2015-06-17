@@ -8,4 +8,4 @@ module.exports = function(req, reply) {
   list.create(function () {
     reply.redirect("/");
   });
-}
+};

@@ -1,6 +1,7 @@
 //goToList.js
 
 var SingleList = require("../models/singleList");
+var ListOfLists = require("../models/listOfLists");
 
 module.exports = function(req, reply) {
     var id = req.params.id;
